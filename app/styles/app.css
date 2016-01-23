@@ -1,0 +1,39 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+#main-nav {
+  position: fixed;
+  overflow: hidden;
+  left: 0px;
+  width: 200px;
+  height:100vh; /* css3 view height */
+  background: #dd6a58;
+}
+
+#main-nav img {
+  width: 100%;
+}
+
+#main-nav ul {
+  list-style: none;
+  margin: 20px 0px;
+  padding: 0px 0px 0px 18px;
+}
+
+#main-nav ul li a {
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.8;
+  color: white;
+}
+
+#ember-body {
+  width: 100%;
+  height: 100vh;
+  background-color: #efefef;
+  padding: 0 15px;
+  margin-left: 200px; /* == main-nav width */
+}
