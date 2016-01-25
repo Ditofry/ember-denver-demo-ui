@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Denver's Emburritos</h2>
+  {{#each model as |emburrito|}}
+    <div class="panel panel-emburrito panel-primary">
+      <div class="panel-heading">{{emburrito.name}}</div>
+      <div class="panel-body">{{emburrito.introduction}}</div>
+    </div>
+  {{/each}}
+
+  {{outlet}}
+</div>
