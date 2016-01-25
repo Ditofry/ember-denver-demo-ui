@@ -6,7 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('emburritos');
+  this.route('emburritos', function(){
+    this.route('new');
+  });
 });
 
 export default Router;

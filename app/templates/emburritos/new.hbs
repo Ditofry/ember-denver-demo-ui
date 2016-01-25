@@ -1,0 +1,16 @@
+<h4>Emburrito to add:</h4>
+<form class="navbar-form navbar-left" >
+  <p>
+    {{input class="form-control" type="text" value=name size="50" placeholder="name"}}
+  </p>
+  <p>
+    {{textarea class="form-control" value=introduction cols="49" placeholder="introduction"}}
+  </p>
+</form>
+
+<button {{action "saveEmburrito" name introduction}} class="btn btn-primary">save</button>
+{{#link-to 'emburritos'}}
+  <div class="btn btn-primary">cancel</div>
+{{/link-to}}
+
+{{outlet}}
