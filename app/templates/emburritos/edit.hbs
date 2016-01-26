@@ -10,9 +10,10 @@
   </p>
 </form>
 
-<button {{action "updateEmburrito" model name introduction}} class="btn btn-primary">save</button>
+<button {{action "updateEmburrito" model name introduction}} class="btn btn-success">save</button>
 {{#link-to 'emburritos'}}
-  <div class="btn btn-primary">cancel</div>
+  <div class="btn btn-warning">cancel</div>
 {{/link-to}}
+
 
 {{outlet}}

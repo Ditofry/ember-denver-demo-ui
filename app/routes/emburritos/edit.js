@@ -11,14 +11,11 @@ export default Ember.Route.extend({
       // Update record locally
       emburrito.set('name', name);
       emburrito.set('introduction', introduction);
-      // Define promise callback behaviour
-      var self = this;
-      var successCallback = function(value){
-        self.transitionTo('emburritos');
-      }
-      var failureCallback = function(reason){
+      // Callbacks for promise, es6 arrow for lexical 'this' context
+      var successCallback = (value) => this.transitionTo('emburritos');
+      var failureCallback = (reason) => {
         alert(reason);
-        self.transitionTo('emburritos');
+        this.transitionTo('emburritos');
       }
       // Persist changes
       emburrito.save().then(successCallback,failureCallback);

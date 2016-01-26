@@ -12,14 +12,11 @@ export default Ember.Route.extend({
         name: name,
         introduction: introduction
       });
-      // Callbacks for promise
-      var self = this;
-      var successCallback = function(value){
-        self.transitionTo('emburritos');
-      }
-      var failureCallback = function(reason){
+      // Callbacks for promise, es6 arrow for lexical 'this' context
+      var successCallback = (value) => this.transitionTo('emburritos');
+      var failureCallback = (reason) => {
         alert(reason);
-        self.transitionTo('emburritos');
+        this.transitionTo('emburritos');
       }
       // Save, supply callbacks to handle response
       newEmburrito.save().then(successCallback,failureCallback);
