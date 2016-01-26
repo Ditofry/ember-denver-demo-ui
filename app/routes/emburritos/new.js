@@ -12,16 +12,17 @@ export default Ember.Route.extend({
         name: name,
         introduction: introduction
       });
-
-      // Persist record, transition and handle success message if you want to.
-      // Messages could be handled in success and failure callbacks
+      // Callbacks for promise
       var self = this;
-      newEmburrito.save().then(function(value){ // success
+      var successCallback = function(value){
         self.transitionTo('emburritos');
-      },function(reason){ // failure
+      }
+      var failureCallback = function(reason){
         alert(reason);
         self.transitionTo('emburritos');
-      });
+      }
+      // Save, supply callbacks to handle response
+      newEmburrito.save().then(successCallback,failureCallback);
     }
   }
 });
