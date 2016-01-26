@@ -4,11 +4,14 @@
     <div class="panel panel-emburrito panel-primary">
       <div class="panel-heading">
         {{emburrito.name}}
+        {{link-to "edit" "emburritos.edit" emburrito class="btn btn-warning"}}
         <button class="btn btn-danger" {{action "deleteEmburrito" emburrito}}>delete</button>
       </div>
       <div class="panel-body">{{emburrito.introduction}}</div>
     </div>
   {{/each}}
+
   {{link-to 'Add Emburrito' 'emburritos.new'}}
+  {{! this is where our emburritos sub-routes will render}}
   {{outlet}}
 </div>

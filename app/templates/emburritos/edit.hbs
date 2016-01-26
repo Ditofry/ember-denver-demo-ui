@@ -1,0 +1,18 @@
+<h4>Editing {{model.name}}:</h4>
+<form class="navbar-form navbar-left" >
+  <p>
+    <label>name</label>
+    {{input class="form-control" type="text" value=name size="50" placeholder=model.name}}
+  </p>
+  <p>
+    <label>introduction</label>
+    {{textarea class="form-control" value=introduction cols="49" placeholder=model.introduction}}
+  </p>
+</form>
+
+<button {{action "updateEmburrito" model name introduction}} class="btn btn-primary">save</button>
+{{#link-to 'emburritos'}}
+  <div class="btn btn-primary">cancel</div>
+{{/link-to}}
+
+{{outlet}}

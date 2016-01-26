@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('emburritos', function(){
     this.route('new');
+    this.route('edit', { path: 'edit/:emburrito_id' });
   });
 });
 
